@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Color</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+      #member,#client { padding: 20px; }
+      #member {background-color: #b3eaff}
+      #client {background-color: #ffdede}
+    </style>
+  </head>
+  <body>
+    <div id="member"></div>
+    <div id="client"></div>
+
+    <script type="text/babel">
+      function Member(props){
+        return(
+          <div className="member">
+            <h2>{ props.name }</h2>
+            <p>Tuổi: { props.age }</p>
+          </div>
+        )
+      };
+
+      ReactDOM.render(
+        <Member name="Trần Tuấn Kiệt" age="25" />,
+        document.getElementById('member')
+      );
+
+      ReactDOM.render(
+        <Member name="TRần Tuấn Kiệt" age="18" />,
+        document.getElementById('client')
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Name</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="member"></div>
+
+    <script type="text/babel">
+      function Avatar(){
+        return(
+          <div className="avatar">
+            <img src="img_avatar.jpg" alt="" />
+          </div>
+        ) };
+      function MemberInfo(){
+        return(
+          <div className="info">
+            <h2>Trần Tuấn Kiệt</h2>
+            <p>Tuổi: 18</p>
+          </div>
+          ) };
+      function Comment(){
+        return(
+          <div className="comment">
+            Phù Mỹ, Bình Định.
+          </div>
+        ) };
+      function Member(){
+        return(
+          <div className="member">
+            <Avatar />
+            <MemberInfo />
+            <Comment />
+          </div>
+        ) };
+      ReactDOM.render(
+        <Member />,
+        document.getElementById('member')
+      );
+    </script>
+  </body>
+</html>

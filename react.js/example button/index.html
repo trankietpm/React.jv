@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Example</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="member"></div>
+
+    <script type="text/babel">
+      class Member extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            name: "Trần Tuấn Kiệt",
+            age: 18,
+            gender:"Nam",
+            job:"Sinh Viên",
+            address:"Phù Mỹ,Bình Định"
+          };
+        };
+
+        changeName = () => {
+          this.setState({
+            name: "Nguyễn Văn A",
+            age: 15,
+            gender:"Nữ",
+            job:"Học Sinh",
+            address:"Mỹ Tài,Bình Định"
+          })
+        };
+
+        render() {
+          return (
+            <div>
+              <h2>{this.state.name}</h2>
+              <p>Tuổi: {this.state.age}</p>
+              <p>Giới Tính: {this.state.gender}</p>
+              <p>Nghề nghiệp: {this.state.job}</p>
+              <p>Địa chỉ: {this.state.address}</p>
+              <button type="button" onClick={this.changeName}>Change information</button>
+            </div>
+          );
+        };
+      };
+
+      ReactDOM.render(
+        <Member />,
+        document.getElementById('member')
+      );
+    </script>

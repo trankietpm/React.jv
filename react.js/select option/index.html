@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title> Seclect option</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      class ActionButton extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {value: 'Toán'};
+        };
+
+        handleChange = (event) => {
+          this.setState({value: event.target.value});
+        };
+
+        handleSubmit = (event) => {
+          alert('Bạn đã chọn khóa học: ' + this.state.value);
+          event.preventDefault();
+        };
+
+        render() {
+          return (
+            <form onSubmit={this.handleSubmit}>
+              <label>
+                Chọn khóa học: 
+                <select value={this.state.value} onChange={this.handleChange}>
+                  <option value="Toán">Toán</option>
+                  <option value="Lý">Lý</option>
+                  <option value="Hóa">Hóa</option>
+                  <option value="Anh Văn">Anh Văn</option>
+                </select>
+              </label>
+              <input type="submit" value="Submit" />
+            </form>
+          );
+        };
+      };
+
+      ReactDOM.render(
+        <ActionButton />,
+        document.getElementById('root')
+      );
+    </script>
+  </body>
+</html>
