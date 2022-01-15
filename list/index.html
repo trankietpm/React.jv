@@ -1,0 +1,71 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>List</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="member"></div>
+
+    <script type="text/babel">
+      class Member extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            users: [
+              { 
+                id: 1,
+                name: "Trần Tuấn Kiệt",
+                gender:'Nam',
+                age: 18,
+                address:'Phù Mỹ,Bình Định',
+                job:'Sinh viên'
+              },
+              {
+                id: 2,
+                name: "Nguyễn Văn A",
+                gender:'Nữ',
+                age: 15,
+                address:'Mỹ Tài,Bình Định',
+                job: 'Học sinh'
+              },
+              {
+                id: 3,
+                name: "Nguyễn Văn B",
+                gender:'Nam',
+                age: 19,
+                address:'Mỹ Hiệp,Bình Định',
+                job:'Sinh viên'
+              }
+            ],
+          };
+        };
+
+        render() {
+          return (
+            <div>
+              <ul>
+                {this.state.users.map(item => (
+                  <li key={item.id}>
+                    <h2>Tên: {item.name}</h2>
+                    <div>Giới tính: {item.gender}</div>
+                    <div>Tuổi: {item.age}</div>
+                    <div>Địa chỉ:{item.address}</div>
+                    <div>Nghề :{item.job}</div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          );
+        };
+      };
+
+      ReactDOM.render(
+        <Member />,
+        document.getElementById('member')
+      );
+    </script>
+  </body>
+</html>

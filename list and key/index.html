@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>List and keys</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      function Tutorial(props) {
+      const sidebar = (
+        <ul>
+          {props.posts.map((post) =>
+            <li key={post.id}>
+              {post.title}
+            </li>
+          )}
+        </ul>
+      );
+      const content = props.posts.map((post) =>
+        <div key={post.id}>
+          <h2>{post.title}</h2>
+          <p>{post.content}</p>
+        </div>
+      );
+      return (
+        <div>
+          {sidebar}
+          <hr />
+          {content}
+        </div>
+      );
+    };
+
+    const posts = [
+      {id: 1, title: 'Họ và tên', content: 'Trần Tuấn Kiệt'},
+      {id: 2, title: 'Quê quán', content: 'Thị trấn Phù Mỹ,Huyện Phù Mỹ,Tỉnh Bình Định'}
+    ];
+    ReactDOM.render(
+      <Tutorial posts={posts} />,
+      document.getElementById('root')
+    );
+    </script>
+  </body>
+</html>
