@@ -1,0 +1,20 @@
+.profile {
+    margin-top: 50px;
+  }
+  .profile h1,
+  h2,
+  h3,
+  .task {
+    margin-left: 50px;
+  }
+  h2 {
+    margin-top: -30px;
+    font-size: 17px;
+    color: #666;
+  }
+  .profile h3,
+  .task {
+    font-size: 20px;
+    line-height: 1;
+    color: #b2b2b2;
+  }

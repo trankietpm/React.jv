@@ -1,0 +1,18 @@
+.request {
+    margin-top: 400px;
+  }
+  input[type="text"] {
+    width: 300px;
+    background-color: #fff;
+    border-radius: 25px;
+    height: 45px;
+    padding: 0 10px;
+  }
+  
+  ::placeholder {
+    color: #b2b2b2;
+    font-size: 17px;
+  }
+  .request img {
+    margin-top: 20px;
+  }

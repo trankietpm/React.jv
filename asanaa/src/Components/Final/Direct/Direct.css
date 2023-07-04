@@ -1,0 +1,17 @@
+.infor {
+    font-size: 14px;
+    color: #b2b2b2;
+    font-weight: 600;
+  }
+  .button-group {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  
+  .button-group .security {
+    margin-right: 5px;
+  }
+  
+  .button-group .encryption {
+    margin-left: 5px;
+  }
